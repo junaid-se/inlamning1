@@ -15,7 +15,7 @@ public class Testconvert {
         String testdata = "-..-";
         String expected = "X";
 
-        String actual = converter.engToMorse(testdata);
+        String actual = converter.morseToEng(testdata);
 
         assertEquals(expected, actual);
     }
@@ -65,6 +65,31 @@ public class Testconvert {
         String actual = converter.engToMorse(testdata);
 
         assertEquals(expected, actual);
+    }
+    @Test
+    public void testconMorsetoY() {
+
+        Converter converter = new Converter();
+
+        String testdata = "";
+        String expected = "Y";
+
+        String actual = converter.morseToEng(testdata);
+
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void testconatoMorse() {
+
+        Converter converter = new Converter();
+
+        String testdata = "a";
+        String expected = ".-";
+
+        String actual = converter.engToMorse(testdata);
+
+        assertEquals(expected, actual);
+
     }
 
 }
