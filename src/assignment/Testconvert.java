@@ -60,7 +60,7 @@ public class Testconvert {
         Converter converter = new Converter();
 
         String testdata = "HEJ";
-        String expected = ".... . -.--" ;
+        String expected = ".... . .---" ;
 
         String actual = converter.engToMorse(testdata);
 
