@@ -65,10 +65,21 @@ public class Converter {
         map.put("--..","Z");
 
 
-
     }
 
     public String engToMorse(String testdata) {
+        if (testdata == null || testdata.trim().isEmpty()) {
+            return "Error: Input is empty!";
+        }
+
+        // Check if input contains any lowercase letter
+        if (!testdata.equals(testdata.toUpperCase())) {
+            return "Error: Only uppercase letters are allowed!";
+        }
+       // if (testdata == null || testdata.isEmpty()) {
+            // Error handling for empty input
+          //  return "Error: Input is empty!";
+
 
         ArrayList<String> morseList = new ArrayList<>();
      String morse = "";
@@ -98,8 +109,32 @@ public class Converter {
 
 
     }
-
+/*
     public String morseToEng(String testdata) {
+        String[] morse = testdata.split(" ");
         return map.get(testdata);
+    }*/
+
+        public String morseToEng(String testdata) {
+            if (testdata == null || testdata.isEmpty()) {
+                return "Error: Input is empty!";
+            }
+
+            String[] morseArray = testdata.split(" ");
+            StringBuilder result = new StringBuilder();
+
+            for (String morseChar : morseArray) {
+                if (map.containsKey(morseChar)) {
+                    result.append(map.get(morseChar));
+                } else if (morseChar.equals("/")) {
+                    result.append(" "); // Space between words in the decoded message
+                } else {
+                    result.append("?"); // Handle invalid Morse characters
+                }
+            }
+
+            return result.toString();
+        }
     }
-    }
+
+

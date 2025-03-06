@@ -72,14 +72,14 @@ public class Testconvert {
         Converter converter = new Converter();
 
         String testdata = "";
-        String expected = "Y";
+        String expected = "empty!";
 
         String actual = converter.morseToEng(testdata);
 
         assertEquals(expected, actual);
     }
     @Test
-    public void testconatoMorse() {
+    public void testcontoMorse() {
 
         Converter converter = new Converter();
 
@@ -90,6 +90,18 @@ public class Testconvert {
 
         assertEquals(expected, actual);
 
+    }
+    @Test
+    public void testconMorseToAA() {
+
+        Converter converter = new Converter();
+
+        String testdata = ".- .-";
+        String expected = "AA";
+
+        String actual = converter.morseToEng(testdata);
+
+        assertEquals(expected, actual);
     }
 
 }
